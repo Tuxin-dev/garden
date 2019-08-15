@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_4XjzULYGEemdeMtYETJxQQ" name="Watering Use Case">
+  <ownedComment xmi:type="uml:Comment" xmi:id="_Nd5ecLYIEemdeMtYETJxQQ">
+    <body>- User has priority over the sensors
+- Sensor has priority over the server</body>
+  </ownedComment>
+  <ownedComment xmi:type="uml:Comment" xmi:id="_IgVGULYKEemdeMtYETJxQQ" annotatedElement="_8iGhILYGEemdeMtYETJxQQ">
+    <body>The 'start' command can specify the duration of the watering.</body>
+  </ownedComment>
+  <ownedComment xmi:type="uml:Comment" xmi:id="_eePvILYKEemdeMtYETJxQQ" annotatedElement="_ga5JYLYHEemdeMtYETJxQQ">
+    <body>The 'stop' command can specify a delay before shutdown.</body>
+  </ownedComment>
+  <ownedComment xmi:type="uml:Comment" xmi:id="_4XxKgLYNEemdeMtYETJxQQ" annotatedElement="_wofckLYLEemdeMtYETJxQQ">
+    <body>An abnormal detection of the moisture content makes it possible to suspend the watering.</body>
+  </ownedComment>
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_46F4oLYGEemdeMtYETJxQQ">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_4iOLMLYGEemdeMtYETJxQQ" name="Interaction1"/>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_4neeoLYGEemdeMtYETJxQQ" name="Activity2"/>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_4oUzMLYGEemdeMtYETJxQQ" name="Interaction3"/>
+  <packagedElement xmi:type="uml:StateMachine" xmi:id="_4o-TcLYGEemdeMtYETJxQQ" name="Watering Cycle">
+    <region xmi:type="uml:Region" xmi:id="_4phGALYGEemdeMtYETJxQQ" name="Region1">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_TOXuoLYQEemdeMtYETJxQQ">
+        <body>the timer is equal to the
+desired duration
+(minimum 1 second)</body>
+      </ownedComment>
+      <transition xmi:type="uml:Transition" xmi:id="_BVmLsLYPEemdeMtYETJxQQ" source="_uACsQLYOEemdeMtYETJxQQ" target="_y5K-YLYOEemdeMtYETJxQQ"/>
+      <transition xmi:type="uml:Transition" xmi:id="_a_rkQLYPEemdeMtYETJxQQ" source="_5AvZkLYOEemdeMtYETJxQQ" target="_OoeXALYPEemdeMtYETJxQQ"/>
+      <transition xmi:type="uml:Transition" xmi:id="_8EoL4LYPEemdeMtYETJxQQ" source="_OoeXALYPEemdeMtYETJxQQ" target="_FB6P8LYQEemdeMtYETJxQQ"/>
+      <transition xmi:type="uml:Transition" xmi:id="_-ZlRELYPEemdeMtYETJxQQ" source="_zxFoYLYPEemdeMtYETJxQQ" target="_JugsgLYREemdeMtYETJxQQ"/>
+      <transition xmi:type="uml:Transition" xmi:id="_nKKHoLYQEemdeMtYETJxQQ" source="_5AvZkLYOEemdeMtYETJxQQ" target="_FB6P8LYQEemdeMtYETJxQQ"/>
+      <transition xmi:type="uml:Transition" xmi:id="_tXkFELYQEemdeMtYETJxQQ" source="_FB6P8LYQEemdeMtYETJxQQ" target="_zxFoYLYPEemdeMtYETJxQQ"/>
+      <transition xmi:type="uml:Transition" xmi:id="_yAfYALYQEemdeMtYETJxQQ" source="_zxFoYLYPEemdeMtYETJxQQ" target="_5AvZkLYOEemdeMtYETJxQQ"/>
+      <transition xmi:type="uml:Transition" xmi:id="_98OxQLYQEemdeMtYETJxQQ" source="_y5K-YLYOEemdeMtYETJxQQ" target="_5AvZkLYOEemdeMtYETJxQQ"/>
+      <transition xmi:type="uml:Transition" xmi:id="_RpSKsLYREemdeMtYETJxQQ" source="_JugsgLYREemdeMtYETJxQQ" target="_4PK9QLYPEemdeMtYETJxQQ"/>
+      <transition xmi:type="uml:Transition" xmi:id="_kQ3J0LYREemdeMtYETJxQQ" source="_WCip8LYREemdeMtYETJxQQ" target="_eMM4sLYREemdeMtYETJxQQ"/>
+      <transition xmi:type="uml:Transition" xmi:id="_sMF7ALYREemdeMtYETJxQQ" source="_eMM4sLYREemdeMtYETJxQQ" target="_5AvZkLYOEemdeMtYETJxQQ"/>
+      <subvertex xmi:type="uml:Pseudostate" xmi:id="_uACsQLYOEemdeMtYETJxQQ" name="start"/>
+      <subvertex xmi:type="uml:State" xmi:id="_y5K-YLYOEemdeMtYETJxQQ" name="start watering"/>
+      <subvertex xmi:type="uml:Pseudostate" xmi:id="_5AvZkLYOEemdeMtYETJxQQ" name="timer = MAX" kind="choice"/>
+      <subvertex xmi:type="uml:State" xmi:id="_OoeXALYPEemdeMtYETJxQQ" name="timer = timer - 1"/>
+      <subvertex xmi:type="uml:Pseudostate" xmi:id="_zxFoYLYPEemdeMtYETJxQQ" name="timer = 0" kind="choice"/>
+      <subvertex xmi:type="uml:FinalState" xmi:id="_4PK9QLYPEemdeMtYETJxQQ" name="end"/>
+      <subvertex xmi:type="uml:State" xmi:id="_FB6P8LYQEemdeMtYETJxQQ" name="wait 1 sec."/>
+      <subvertex xmi:type="uml:State" xmi:id="_JugsgLYREemdeMtYETJxQQ" name="stop watering"/>
+      <subvertex xmi:type="uml:Pseudostate" xmi:id="_WCip8LYREemdeMtYETJxQQ" name="stop"/>
+      <subvertex xmi:type="uml:State" xmi:id="_eMM4sLYREemdeMtYETJxQQ" name="timer = duration"/>
+    </region>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="__3MNoLYGEemdeMtYETJxQQ" name="watering controller">
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_8iGhILYGEemdeMtYETJxQQ" name="start"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_ga5JYLYHEemdeMtYETJxQQ" name="stop"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_811YoLYKEemdeMtYETJxQQ" name="synchro"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_wofckLYLEemdeMtYETJxQQ" name="pause/resume"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_amx1sLYHEemdeMtYETJxQQ" name="Server">
+    <generalization xmi:type="uml:Generalization" xmi:id="_Y9-vELYLEemdeMtYETJxQQ" general="_et9tgLYHEemdeMtYETJxQQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_et9tgLYHEemdeMtYETJxQQ" name="User"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_sP62oLYHEemdeMtYETJxQQ" memberEnd="_sP958LYHEemdeMtYETJxQQ _sQAWMLYHEemdeMtYETJxQQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_sP8r0LYHEemdeMtYETJxQQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_sP8r0bYHEemdeMtYETJxQQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_sP958LYHEemdeMtYETJxQQ" name="start" type="_811YoLYKEemdeMtYETJxQQ" association="_sP62oLYHEemdeMtYETJxQQ"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_sQAWMLYHEemdeMtYETJxQQ" name="server" type="_amx1sLYHEemdeMtYETJxQQ" association="_sP62oLYHEemdeMtYETJxQQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_tRm9ILYHEemdeMtYETJxQQ" memberEnd="_tRoLQLYHEemdeMtYETJxQQ _tRoLQbYHEemdeMtYETJxQQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_tRnkMLYHEemdeMtYETJxQQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_tRnkMbYHEemdeMtYETJxQQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_tRoLQLYHEemdeMtYETJxQQ" name="stop" type="_ga5JYLYHEemdeMtYETJxQQ" association="_tRm9ILYHEemdeMtYETJxQQ"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_tRoLQbYHEemdeMtYETJxQQ" name="server" type="_et9tgLYHEemdeMtYETJxQQ" association="_tRm9ILYHEemdeMtYETJxQQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_yoxPELYHEemdeMtYETJxQQ" name="Sensor">
+    <generalization xmi:type="uml:Generalization" xmi:id="_Nbq3kLYNEemdeMtYETJxQQ" general="_et9tgLYHEemdeMtYETJxQQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_O-EJULYLEemdeMtYETJxQQ" memberEnd="_O-EwYrYLEemdeMtYETJxQQ _O-EwY7YLEemdeMtYETJxQQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_O-EwYLYLEemdeMtYETJxQQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_O-EwYbYLEemdeMtYETJxQQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_O-EwYrYLEemdeMtYETJxQQ" name="start" type="_8iGhILYGEemdeMtYETJxQQ" association="_O-EJULYLEemdeMtYETJxQQ"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_O-EwY7YLEemdeMtYETJxQQ" name="sensor" type="_et9tgLYHEemdeMtYETJxQQ" association="_O-EJULYLEemdeMtYETJxQQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_aFyPMLYMEemdeMtYETJxQQ" memberEnd="_aF0EYbYMEemdeMtYETJxQQ _aF0rcLYMEemdeMtYETJxQQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aFzdULYMEemdeMtYETJxQQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aF0EYLYMEemdeMtYETJxQQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_aF0EYbYMEemdeMtYETJxQQ" name="sensor" type="_yoxPELYHEemdeMtYETJxQQ" association="_aFyPMLYMEemdeMtYETJxQQ"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_aF0rcLYMEemdeMtYETJxQQ" name="pause/resume" type="_wofckLYLEemdeMtYETJxQQ" association="_aFyPMLYMEemdeMtYETJxQQ"/>
+  </packagedElement>
+</uml:Model>
